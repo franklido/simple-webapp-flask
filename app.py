@@ -2,13 +2,15 @@ import os
 from flask import Flask
 app = Flask(__name__)
 
+frutto = os.environ.get('FRUTTO')
+
 @app.route("/")
 def main():
-	return "Welcome!"
+	return "Benvenuto. Che frutto ci piace oggi?"
 
-@app.route("/mela")
-def mela():
-	return "Le pomme est rouge"
+@app.route("/scopriamolo")
+def scopriamolo():
+	return FRUTTO
 
 if __name__ == "__main__":
 	app.run()
